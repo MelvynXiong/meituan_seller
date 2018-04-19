@@ -14,8 +14,8 @@
 <script>
 
 //import 1.导入
-import Myheader from './components/header/Header'
-import Mynav from './components/nav/Nav'
+import Myheader from 'components/header/Header'
+import Mynav from 'components/nav/Nav'
 export default {
   name: 'App',
   components: {

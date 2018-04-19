@@ -27,6 +27,8 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      //路径的配置
+      'components': resolve('./src/components')
     }
   },
   module: {
