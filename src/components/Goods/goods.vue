@@ -15,6 +15,7 @@
               <img :src="item.icon" v-if="item.icon" class="icon">
               {{item.name}}
             </p>
+            <i class="m-num" v-show="calculateCount(item.spus)">{{calculateCount(item.spus)}}</i>
           </li>
         </ul>
       </div>
@@ -48,23 +49,33 @@
                     <span class="f-unit">/{{food.unit}}</span>
                   </p>
                 </div>
+
+                <div class="cartcontrol-wrapper">
+                  <Cartcontrol :food="food"></Cartcontrol>
+                </div>
               </li>
             </ul>
           </li>
         </ul>
       </div>
+      <Shopcart :shipping_fee_tip='poiInfo.shipping_fee_tip' :min_price_tip="poiInfo.min_price_tip" :selectFoods="selectFoods"></Shopcart>
     </div>
 </template>
 
 <script>
     //导入BScroll
     import BScroll from "better-scroll"
+    //导入Shopcart
+    import Shopcart from "components/Shopcart/Shopcart"
+    //导入Cartcontrol
+    import Cartcontrol from "components/Cartcontrol/Cartcontrol"
     export default {
       name: "goods",
       data() {
         return {
           container:{},
           goods: [],
+          poiInfo: {},
           listHeight:[],
           scrollY: 0,
           menuScroll: {},
@@ -83,7 +94,7 @@
             if(dataSource.code == 0) {
               that.container = dataSource.data.container_operation_source;
               that.goods = dataSource.data.food_spu_tags;
-
+              that.poiInfo = dataSource.data.poi_info;
               //调用滚动的初始化方法
               //that.initScroll();
               //开始时，DOM元素没有渲染，高度存在问题
@@ -113,7 +124,7 @@
         initScroll() {
           //ref属性用来绑定某个DOM元素或某个组件，然后在this.$refs里面
           this.menuScroll = new BScroll(this.$refs.menuScroll,{});
-          this.foodScroll = new BScroll(this.$refs.foodScroll, {probeType: 3});
+          this.foodScroll = new BScroll(this.$refs.foodScroll, {probeType: 3, click: true});
 
           //添加滚动监听事件
           this.foodScroll.on('scroll', (pos) => {
@@ -144,12 +155,21 @@
           //根据下标，滚动到相应元素的位置
           let el = foodlist[index];
           this.foodScroll.scrollToElement(el,250);
+        },
+        calculateCount(spus) {
+          let count = 0;
+          spus.forEach((food)=>{
+            if(food.count>0) {
+              count += food.count;
+            }
+          });
+          return count;
         }
       },
       computed: {
         currentIndex() {
           //根据右侧滚动位置确定对应的索引下标
-          for(let i=0; i<this.listHeight.length-1; i++){
+          for(let i=0; i<this.listHeight.length; i++){
             //获取商品区间的范围
             let height1 = this.listHeight[i];
             let height2 = this.listHeight[i+1];
@@ -160,7 +180,23 @@
             }
           }
           return 0;
-        }
+        },
+        selectFoods() {
+          let foods = [];
+          this.goods.forEach((good)=>{
+            good.spus.forEach((food)=>{
+              if(food.count>0) {
+                foods.push(food);
+              }
+            })
+          });
+          return foods;
+        },
+      },
+      components: {
+        BScroll,
+        Shopcart,
+        Cartcontrol
       }
       // computed: {//计算属性
       //   //不能传递参数

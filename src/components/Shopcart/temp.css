@@ -1,0 +1,77 @@
+.shopcart {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 51px;
+  background: #514f4f;
+}
+.shopcart.highlight {
+  background: #2d2b2a;
+}
+.content-left {
+  flex: 1;
+}
+.logo-wrapper {
+  position: relative;
+  bottom: 14px;
+  left: 10px;
+  float: left;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  background: #666;
+  border-radius: 50%;
+}
+.logo-wrapper.highlight {
+  background: #ffd161;
+}
+.logo-wrapper span {
+  font-size: 28px;
+  color: #c4c4c4;
+  /*可是使用line-height来垂直居中*/
+  line-height: 50px;
+}
+.logo-wrapper span.highlight {
+  color: #2d2b2a;
+}
+.f-num {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  border-radius: 50%;
+  font-size: 9px;
+  color: #fff;
+  background: #ff0000;
+}
+.desc-wrapper {
+  float: left;
+  margin-left: 23px;
+}
+.total-price {
+  line-height: 33px;
+  font-size: 18px;
+  color: #fff;
+}
+.tip {
+  line-height: 51px;
+  font-size: 12px;
+  color: #bab9b9;
+}
+.tip.highlight {
+  line-height: 12px;
+}
+.content-right {
+  flex: 0 0 110px;
+  line-height: 51px;
+  text-align: center;
+  font-size: 15px;
+  color: #bab9b9;
+}
+.content-right.highlight {
+  background: #ffd161;
+  color: #2d2b2a;
+}
