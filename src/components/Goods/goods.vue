@@ -19,7 +19,7 @@
           </li>
         </ul>
       </div>
-      <!--菜品详情-->
+      <!--菜品列表-->
       <div class="food-wrapper" ref="foodScroll">
         <ul>
           <!--专场-->
@@ -33,7 +33,7 @@
             <h3>{{item.name}}</h3>
             <!--具体商品列表-->
             <ul>
-              <li v-for="food in item.spus" class="food-item">
+              <li v-for="food in item.spus" class="food-item" @click="showDetail(food)">
                 <div class="f-icon" :style="head_bg(food.picture)"></div>
 
                 <div class="content">
@@ -58,7 +58,10 @@
           </li>
         </ul>
       </div>
+      <!--购物车-->
       <Shopcart :poiInfo="poiInfo" :selectFoods="selectFoods"></Shopcart>
+      <!--菜品详情-->
+      <Food :food="selectedFood" ref="foodView"></Food>
     </div>
 </template>
 
@@ -69,6 +72,8 @@
     import Shopcart from "components/Shopcart/Shopcart"
     //导入Cartcontrol
     import Cartcontrol from "components/Cartcontrol/Cartcontrol"
+    //导入Food组件
+    import Food from "components/food/Food"
     export default {
       name: "goods",
       data() {
@@ -79,7 +84,8 @@
           listHeight:[],
           scrollY: 0,
           menuScroll: {},
-          foodScroll: {}
+          foodScroll: {},
+          selectedFood: {}
         }
       },
       created() {
@@ -164,6 +170,12 @@
             }
           });
           return count;
+        },
+        showDetail(food) {
+          //传值
+          this.selectedFood = food;
+          //显示详情页
+          this.$refs.foodView.showView();
         }
       },
       computed: {
@@ -196,7 +208,8 @@
       components: {
         BScroll,
         Shopcart,
-        Cartcontrol
+        Cartcontrol,
+        Food
       }
       // computed: {//计算属性
       //   //不能传递参数
