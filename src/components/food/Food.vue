@@ -111,5 +111,179 @@
 
 <style scoped>
   @import "../../common/styles/icon.css";
-  @import "./Food.css";
+  .food {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 51px;
+    width: 100%;
+    background: #fff;
+    z-index: 97;
+  }
+  .detail-enter-active,
+  .detail-leave-active {
+    transition: 1.0s
+  }
+  .detail-enter,
+  .detail-leave-to {
+    transform: translateX(100%);
+  }
+  .food-content {
+    position: relative;
+  }
+  .img-wrapper {
+    position: relative;
+    /*!*高度如何撑开,在定位中，使用padding-top或padding-bottom设置为100%, 盒子高度会根据盒子的宽度来计算*!*/
+    /*padding-top: 100%;*/
+  }
+  .food-img {
+    width: 100%;
+    /*
+    * 如果不照课程视频里那样写，图片如果很大的情况下，等图片完全加载完后，要重新渲染
+    */
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+    /*height: 100%;*/
+  }
+  .close-bt {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    background: #7f7f7f;
+    border-radius: 50%;
+  }
+  .share-bt {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    width: 30px;
+  }
+  .more-bt {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+  }
+
+  .content-wrapper {
+    padding: 0 0 16px 16px;
+  }
+  .name {
+    line-height: 30px;
+    font-size: 15px;
+    color: #333;
+    font-weight: bold;
+  }
+  .saled {
+    margin-bottom: 6px;
+    font-size: 11px;
+    color: #9d9d9d;
+  }
+  .product {
+    height: 15px;
+    margin-bottom: 16px;
+  }
+  .price {
+    font-size: 0;
+  }
+  .text {
+    font-size: 17px;
+    color: #fb4e44;
+  }
+  .unit {
+    font-size: 11px;
+    color: #9d9d9d;
+  }
+  .cartcontrol-wrapper {
+    position: absolute;
+    right: 12px;
+    bottom: 10px;
+    padding: 2px;
+  }
+  .buy {
+    position: absolute;
+    right: 12px;
+    bottom: 10px;
+    width: 64px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: center;
+    background: #ffd161;
+    border-radius: 30px;
+  }
+
+  .rating-wrapper {
+    padding-left: 16px;
+  }
+  .rating-title {
+    display: flex;
+    padding: 16px 16px 16px 0;
+    justify-content: space-between;
+  }
+  .title {
+    font-size: 13px;
+  }
+  .ratio {
+    font-size: 11px;
+  }
+  .ratio i {
+    font-size: 11px;
+    color: #fb4e44;
+  }
+  .icon,
+  .s-text {
+    font-size: 13px;
+    color: #9d9d9d;
+  }
+  .icon {
+    margin-left: 12px;
+    vertical-align: middle;
+  }
+
+  .rating-item {
+    display: flex;
+    box-sizing: border-box;
+    padding: 15px 14px 17px 0;
+    width: 100%;
+    border-top: 1px solid #f4f4f4;
+  }
+  .comment-header {
+    flex: 0 0 41px;
+    margin-right: 10px;
+  }
+  .comment-header img {
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+  }
+  .comment-main {
+    flex: 1;
+    margin-top: 6px;
+  }
+  .user {
+    float: left;
+    width: 50%;
+    font-size: 12px;
+    color: #333;
+  }
+  .time {
+    float: right;
+    width: 50%;
+    text-align: right;
+    font-size: 10px;
+    color: #666;
+  }
+  .content {
+    margin-top: 17px;
+    font-size: 13px;
+    line-height: 19px;
+  }
 </style>
