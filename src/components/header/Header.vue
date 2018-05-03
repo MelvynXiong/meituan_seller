@@ -273,8 +273,9 @@
     height: 100%;
     position: absolute;
     top: 0;
+    left: 0;
     background: rgba(98,98,98,0.8);
-    z-index: 1;
+    z-index: 10;
   }
   .detail-wrapper {
     width: 100%;

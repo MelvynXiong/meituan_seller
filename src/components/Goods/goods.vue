@@ -129,7 +129,7 @@
         //滚动的初始化
         initScroll() {
           //ref属性用来绑定某个DOM元素或某个组件，然后在this.$refs里面
-          this.menuScroll = new BScroll(this.$refs.menuScroll,{});
+          this.menuScroll = new BScroll(this.$refs.menuScroll,{click:true});
           this.foodScroll = new BScroll(this.$refs.foodScroll, {probeType: 3, click: true});
 
           //添加滚动监听事件
