@@ -83,5 +83,4 @@
   .move-leave-to {
     transform: translateX(20px) rotate(180deg);
   }
-
 </style>

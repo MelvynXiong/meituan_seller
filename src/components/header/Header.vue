@@ -124,6 +124,7 @@
 
 <style scoped>
   @import url("../../common/styles/icon.css");
+  @import url("../../../static/CSS/reset.css");
   .header {
     height: 160px;
     /*手机顶部的信息栏会占位置*/

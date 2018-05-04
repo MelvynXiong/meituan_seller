@@ -165,6 +165,18 @@
 
 <style scoped>
   @import "../../common/styles/icon.css";
+  p, i, ul, li, h3 {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    border: 0;
+  }
+  body {
+    line-height: 1;
+  }
+  ol, ul {
+    list-style: none;
+  }
   .shopcart-wrapper {
     display: flex;
     position: fixed;
@@ -313,6 +325,7 @@
   }
   .l-f-name {
     font-size: 16px;
+    line-height: 16px;
     margin-bottom: 8px;
 
     /*超出部分隐藏*/
@@ -323,10 +336,12 @@
     height: 16px;
   }
   .l-f-unit {
+    line-height: 12px;
     font-size: 12px;
     color: #b4b4b4;
   }
   .description {
+    line-height: 12px;
     font-size: 12px;
     color: #b4b4b4;
 

@@ -111,6 +111,7 @@
 
 <style scoped>
   @import "../../common/styles/icon.css";
+  @import url("../../../static/CSS/reset.css");
   .food {
     position: fixed;
     left: 0;

@@ -191,6 +191,7 @@
 </script>
 
 <style scoped>
+  @import url("../../../static/CSS/reset.css");
   .ratings {
     /*使用绝对定位加top bottom的组合是用来确定该盒子的位置和高度*/
     position: absolute;
@@ -352,6 +353,7 @@
     padding-bottom: 15px;
   }
   .star-text {
+    line-height: 16px;
     font-size: 11px;
     color: #999;
     margin-right: 7px;

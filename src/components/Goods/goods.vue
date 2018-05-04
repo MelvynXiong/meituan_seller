@@ -222,4 +222,5 @@
 
 <style scoped>
   @import "demo.css";
+  @import url("../../../static/CSS/reset.css");
 </style>

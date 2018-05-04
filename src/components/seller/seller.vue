@@ -109,6 +109,8 @@
 
 <style scoped>
   @import "../../common/styles/icon.css";
+  @import url("../../../static/CSS/reset.css");
+
   .seller {
     position: absolute;
     left: 0;

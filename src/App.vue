@@ -67,5 +67,9 @@ export default {
 </script>
 
 <style>
-
+  html, body, div, span, p, i, ul, li, h3 {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+  }
 </style>

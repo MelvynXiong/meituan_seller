@@ -31,6 +31,7 @@
 </script>
 
 <style scoped>
+  @import url("../../../static/CSS/reset.css");
   .nav {
     display: flex;
     width: 100%;
